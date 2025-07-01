@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sen Vòi Yohu Việt Nam</title>
+    <meta name="description" content="50 mẫu sen vòi hiện đại, tiết kiệm nước">
+    <meta name="keywords" content="sen vòi, thiết bị vệ sinh Hưng Yên">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#0066cc',secondary:'#f0f0f0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+        }
+        .video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 102, 204, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            padding-left: 10%;
+        }
+        .search-container {
+            position: relative;
+        }
+        .search-container input {
+            padding-left: 2.5rem;
+        }
+        .search-container i {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .product-card:hover img {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+        .product-card img {
+            transition: transform 0.3s ease;
+        }
+        .sticky-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background-color: white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .custom-checkbox {
+            position: relative;
+            padding-left: 30px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .custom-checkbox input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            background-color: #fff;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+        }
+        .custom-checkbox:hover input ~ .checkmark {
+            border-color: #ccc;
+        }
+        .custom-checkbox input:checked ~ .checkmark {
+            background-color: #0066cc;
+            border-color: #0066cc;
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .custom-checkbox input:checked ~ .checkmark:after {
+            display: block;
+        }
+        .custom-checkbox .checkmark:after {
+            left: 6px;
+            top: 2px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="sticky-header">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <a href="#" class="text-3xl font-['Pacifico'] text-primary mr-10">Yohu</a>
+                <nav class="hidden md:flex space-x-6">
+                    <a href="#" class="text-gray-800 hover:text-primary font-medium transition-colors">Trang chủ</a>
+                    <a href="#products" class="text-gray-800 hover:text-primary font-medium transition-colors">Sản phẩm</a>
+                    <a href="#about" class="text-gray-800 hover:text-primary font-medium transition-colors">Giới thiệu</a>
+                    <a href="#contact" class="text-gray-800 hover:text-primary font-medium transition-colors">Liên hệ</a>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="search-container hidden md:block">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm..." class="border border-gray-300 rounded-button py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <div class="w-5 h-5 flex items-center justify-center text-gray-500">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center" id="mobile-menu-button">
+                    <i class="ri-menu-line text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu hidden bg-white w-full py-4 px-4 md:hidden" id="mobile-menu">
+            <nav class="flex flex-col space-y-4">
+                <a href="#" class="text-gray-800 hover:text-primary font-medium">Trang chủ</a>
+                <a href="#products" class="text-gray-800 hover:text-primary font-medium">Sản phẩm</a>
+                <a href="#about" class="text-gray-800 hover:text-primary font-medium">Giới thiệu</a>
+                <a href="#contact" class="text-gray-800 hover:text-primary font-medium">Liên hệ</a>
+                <div class="search-container pt-2">
+                    <input type="text" placeholder="Tìm kiếm sản phẩm..." class="w-full border border-gray-300 rounded-button py-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                    <div class="w-5 h-5 flex items-center justify-center text-gray-500">
+                        <i class="ri-search-line"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner Video -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline preload="auto">
+            <source src="https://readdy.ai/api/search-image?query=luxury%20bathroom%20shower%20with%20crystal%20clear%20water%20flowing%20from%20a%20modern%20chrome%20showerhead%2C%20slow%20motion%20water%20droplets%2C%20high-end%20bathroom%20interior%2C%20marble%20tiles%2C%20glass%20shower%20enclosure%2C%20soft%20lighting%2C%20steam%20rising&width=1280&height=720&seq=123&orientation=landscape" type="video/mp4">
+        </video>
+        <div class="video-overlay">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4 max-w-lg">Sen Vòi Yohu - Chất Lượng Hàng Đầu</h1>
+            <p class="text-xl text-white mb-6 max-w-md">50 mẫu hiện đại, tiết kiệm nước, nâng tầm không gian sống của bạn</p>
+            <a href="#contact" class="bg-white text-primary hover:bg-primary hover:text-white transition-colors duration-300 font-medium px-6 py-3 rounded-button whitespace-nowrap !rounded-button">Liên hệ ngay</a>
+        </div>
+    </div>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-4">Sản Phẩm Sen Vòi Cao Cấp</h2>
+            <p class="text-gray-600 text-center mb-10 max-w-2xl mx-auto">Khám phá bộ sưu tập 50 mẫu sen vòi hiện đại, tiết kiệm nước với thiết kế sang trọng và chất lượng vượt trội</p>
+            
+            <!-- Filter -->
+            <div class="flex flex-wrap justify-center mb-10 gap-4">
+                <button class="bg-primary text-white px-6 py-2 rounded-full whitespace-nowrap !rounded-button">Tất cả sản phẩm</button>
+                <button class="bg-white text-gray-700 hover:bg-gray-200 px-6 py-2 rounded-full whitespace-nowrap !rounded-button">Sen tắm đứng</button>
+                <button class="bg-white text-gray-700 hover:bg-gray-200 px-6 py-2 rounded-full whitespace-nowrap !rounded-button">Vòi lavabo</button>
+                <button class="bg-white text-gray-700 hover:bg-gray-200 px-6 py-2 rounded-full whitespace-nowrap !rounded-button">Vòi bếp</button>
+            </div>
+            
+            <!-- Products Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20chrome%20showerhead%20with%20sleek%20design%2C%20water%20flowing%2C%20high-end%20bathroom%20fixture%2C%20minimalist%20style%2C%20white%20background%2C%20product%20photography%2C%20high%20resolution&width=600&height=400&seq=1&orientation=landscape" alt="Sen Vòi Mẫu 1" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-sm px-2 py-1 rounded">Hàng mới</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Sen Vòi Mẫu YH-S101</h3>
+                        <p class="text-gray-600 text-sm mb-4">Chất liệu inox 304 cao cấp, thiết kế hiện đại, tiết kiệm nước</p>
+                        <a href="#contact" class="inline-block bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-button whitespace-nowrap !rounded-button">Liên hệ</a>
+                    </div>
+                </div>
+                
+                <!-- Product 2 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=luxury%20bathroom%20faucet%20with%20elegant%20design%2C%20chrome%20finish%2C%20modern%20sink%20tap%2C%20premium%20quality%2C%20white%20background%2C%20product%20photography%2C%20high%20resolution&width=600&height=400&seq=2&orientation=landscape" alt="Sen Vòi Mẫu 2" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-2 right-2 bg-orange-500 text-white text-sm px-2 py-1 rounded">Bán chạy</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Sen Vòi Mẫu YH-L205</h3>
+                        <p class="text-gray-600 text-sm mb-4">Vòi lavabo cao cấp, thiết kế sang trọng, lõi sứ bền bỉ</p>
+                        <a href="#contact" class="inline-block bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-button whitespace-nowrap !rounded-button">Liên hệ</a>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=premium%20kitchen%20faucet%20with%20pull-down%20sprayer%2C%20stainless%20steel%20finish%2C%20modern%20design%2C%20high-end%20kitchen%20fixture%2C%20white%20background%2C%20product%20photography%2C%20high%20resolution&width=600&height=400&seq=3&orientation=landscape" alt="Sen Vòi Mẫu 3" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Sen Vòi Mẫu YH-K310</h3>
+                        <p class="text-gray-600 text-sm mb-4">Vòi bếp cao cấp, thiết kế linh hoạt, dễ dàng sử dụng</p>
+                        <a href="#contact" class="inline-block bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-button whitespace-nowrap !rounded-button">Liên hệ</a>
+                    </div>
+                </div>
+                
+                <!-- Product 4 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=luxury%20rainfall%20shower%20system%20with%20handheld%20sprayer%2C%20modern%20bathroom%20fixture%2C%20chrome%20finish%2C%20premium%20quality%2C%20white%20background%2C%20product%20photography%2C%20high%20resolution&width=600&height=400&seq=4&orientation=landscape" alt="Sen Vòi Mẫu 4" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-sm px-2 py-1 rounded">Hàng mới</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Sen Vòi Mẫu YH-S420</h3>
+                        <p class="text-gray-600 text-sm mb-4">Bộ sen cây cao cấp, tích hợp vòi xả, thiết kế sang trọng</p>
+                        <a href="#contact" class="inline-block bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-button whitespace-nowrap !rounded-button">Liên hệ</a>
+                    </div>
+                </div>
+                
+                <!-- Product 5 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20wall-mounted%20bathroom%20faucet%2C%20sleek%20design%2C%20chrome%20finish%2C%20premium%20quality%2C%20white%20background%2C%20product%20photography%2C%20high%20resolution&width=600&height=400&seq=5&orientation=landscape" alt="Sen Vòi Mẫu 5" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Sen Vòi Mẫu YH-L515</h3>
+                        <p class="text-gray-600 text-sm mb-4">Vòi lavabo gắn tường, thiết kế hiện đại, tiết kiệm không gian</p>
+                        <a href="#contact" class="inline-block bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-button whitespace-nowrap !rounded-button">Liên hệ</a>
+                    </div>
+                </div>
+                
+                <!-- Product 6 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=premium%20kitchen%20sink%20faucet%20with%20pull-out%20sprayer%2C%20brushed%20nickel%20finish%2C%20modern%20design%2C%20high-end%20kitchen%20fixture%2C%20white%20background%2C%20product%20photography%2C%20high%20resolution&width=600&height=400&seq=6&orientation=landscape" alt="Sen Vòi Mẫu 6" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-2 right-2 bg-orange-500 text-white text-sm px-2 py-1 rounded">Bán chạy</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Sen Vòi Mẫu YH-K625</h3>
+                        <p class="text-gray-600 text-sm mb-4">Vòi bếp kéo dài, thiết kế linh hoạt, dễ dàng vệ sinh</p>
+                        <a href="#contact" class="inline-block bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-button whitespace-nowrap !rounded-button">Liên hệ</a>
+                    </div>
+                </div>
+                
+                <!-- Product 7 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20thermostatic%20shower%20system%2C%20multiple%20spray%20options%2C%20chrome%20finish%2C%20premium%20quality%2C%20white%20background%2C%20product%20photography%2C%20high%20resolution&width=600&height=400&seq=7&orientation=landscape" alt="Sen Vòi Mẫu 7" class="w-full h-full object-cover object-top">
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Sen Vòi Mẫu YH-S730</h3>
+                        <p class="text-gray-600 text-sm mb-4">Sen tắm nhiệt độ, điều chỉnh linh hoạt, an toàn tuyệt đối</p>
+                        <a href="#contact" class="inline-block bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-button whitespace-nowrap !rounded-button">Liên hệ</a>
+                    </div>
+                </div>
+                
+                <!-- Product 8 -->
+                <div class="product-card bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
+                    <div class="relative overflow-hidden h-60">
+                        <img src="https://readdy.ai/api/search-image?query=luxury%20vessel%20sink%20faucet%2C%20tall%20design%2C%20chrome%20finish%2C%20modern%20bathroom%20fixture%2C%20premium%20quality%2C%20white%20background%2C%20product%20photography%2C%20high%20resolution&width=600&height=400&seq=8&orientation=landscape" alt="Sen Vòi Mẫu 8" class="w-full h-full object-cover object-top">
+                        <div class="absolute top-2 right-2 bg-primary text-white text-sm px-2 py-1 rounded">Hàng mới</div>
+                    </div>
+                    <div class="p-4">
+                        <h3 class="text-lg font-semibold mb-2">Sen Vòi Mẫu YH-L840</h3>
+                        <p class="text-gray-600 text-sm mb-4">Vòi lavabo cao cấp, thiết kế thanh lịch, phù hợp mọi không gian</p>
+                        <a href="#contact" class="inline-block bg-primary text-white hover:bg-blue-700 px-4 py-2 rounded-button whitespace-nowrap !rounded-button">Liên hệ</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-primary text-white hover:bg-blue-700 px-8 py-3 rounded-button whitespace-nowrap !rounded-button">Xem thêm sản phẩm</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="flex flex-col md:flex-row gap-10 items-center">
+                    <div class="md:w-1/2">
+                        <h2 class="text-3xl font-bold mb-6">Giới Thiệu Về Yohu Việt Nam</h2>
+                        <p class="text-gray-700 mb-4">Công ty TNHH Yohu Việt Nam tại Nhân Dục, Hiến Nam, Hưng Yên, là đơn vị chuyên cung cấp các sản phẩm sen vòi cao cấp với chất lượng vượt trội và thiết kế hiện đại.</p>
+                        <p class="text-gray-700 mb-4">Với hơn 50 mẫu sen vòi đa dạng, chúng tôi cam kết mang đến cho khách hàng những sản phẩm bền bỉ, tiết kiệm nước và nâng tầm không gian sống.</p>
+                        <p class="text-gray-700 mb-6">Ngoài ra, chúng tôi còn phát triển phần mềm Yohu Kế Toán Pro - giải pháp quản lý bán hàng hiệu quả dành cho doanh nghiệp nhỏ và hộ kinh doanh với tính năng báo cáo bằng giọng nói.</p>
+                        <a href="https://yohu-pro.github.io/Yohu-ketoanpro/" target="_blank" class="inline-block bg-primary text-white hover:bg-blue-700 px-6 py-3 rounded-button whitespace-nowrap !rounded-button">Tìm hiểu thêm về Yohu Kế Toán Pro</a>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="https://readdy.ai/api/search-image?query=modern%20bathroom%20interior%20with%20premium%20fixtures%2C%20elegant%20design%2C%20marble%20countertop%2C%20glass%20shower%20enclosure%2C%20high-end%20faucets%20and%20showerheads%2C%20luxury%20bathroom%20showroom%2C%20bright%20and%20clean%2C%20professional%20photography&width=600&height=400&seq=9&orientation=landscape" alt="Yohu Việt Nam" class="w-full h-auto rounded-lg shadow-lg">
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16">
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                            <i class="ri-award-line text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Chất Lượng Hàng Đầu</h3>
+                        <p class="text-gray-600">Sản phẩm được sản xuất từ nguyên liệu cao cấp, bền bỉ với thời gian và điều kiện sử dụng.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                            <i class="ri-drop-line text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Tiết Kiệm Nước</h3>
+                        <p class="text-gray-600">Thiết kế thông minh giúp tiết kiệm nước mà vẫn đảm bảo trải nghiệm sử dụng tuyệt vời.</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                        <div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center text-primary">
+                            <i class="ri-palette-line text-4xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-3">Thiết Kế Hiện Đại</h3>
+                        <p class="text-gray-600">Đa dạng mẫu mã với thiết kế tinh tế, sang trọng, phù hợp với mọi không gian.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Liên Hệ Với Chúng Tôi</h2>
+            
+            <div class="max-w-6xl mx-auto flex flex-col lg:flex-row gap-10">
+                <div class="lg:w-1/2">
+                    <form id="contact-form" class="bg-gray-50 p-8 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-6">Gửi Tin Nhắn</h3>
+                        
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-700 mb-2">Họ và tên</label>
+                            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-700 mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="phone" class="block text-gray-700 mb-2">Số điện thoại</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 mb-2">Tin nhắn</label>
+                            <textarea id="message" name="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-button focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" required></textarea>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label class="custom-checkbox">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                <span class="text-gray-700">Tôi đồng ý với các điều khoản và điều kiện</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary text-white hover:bg-blue-700 py-3 px-6 rounded-button font-medium whitespace-nowrap !rounded-button">Gửi tin nhắn</button>
+                    </form>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-gray-50 p-8 rounded-lg shadow-md h-full">
+                        <h3 class="text-xl font-semibold mb-6">Thông Tin Liên Hệ</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                    <i class="ri-map-pin-line text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Địa chỉ:</h4>
+                                    <p class="text-gray-700">Nhân Dục, Hiến Nam, Hưng Yên, Việt Nam</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                    <i class="ri-phone-line text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Điện thoại:</h4>
+                                    <p class="text-gray-700">0973 480 488</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                    <i class="ri-chat-1-line text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Zalo OA:</h4>
+                                    <p class="text-gray-700">033960 6969</p>
+                                    <a href="https://zalo.me/0339606969" target="_blank" class="inline-block mt-2 text-primary hover:text-blue-700">Nhắn tin qua Zalo</a>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                    <i class="ri-mail-line text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Email:</h4>
+                                    <p class="text-gray-700">Yohu.vn@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 flex items-center justify-center text-primary mr-4">
+                                    <i class="ri-global-line text-2xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-gray-900">Website:</h4>
+                                    <a href="https://yohu-pro.github.io/Yohu-ketoanpro/" target="_blank" class="text-primary hover:text-blue-700">Yohu Kế Toán Pro</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <h4 class="font-medium text-gray-900 mb-4">Bản đồ:</h4>
+                            <div class="w-full h-60 bg-gray-200 rounded-lg overflow-hidden" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+                <div>
+                    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-4 inline-block">Yohu</a>
+                    <p class="text-gray-400 mb-6">Công ty TNHH Yohu Việt Nam chuyên cung cấp các sản phẩm sen vòi cao cấp và phần mềm Yohu Kế Toán Pro.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-facebook-fill text-xl"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-youtube-fill text-xl"></i>
+                        </a>
+                        <a href="https://zalo.me/0339606969" target="_blank" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
+                            <i class="ri-chat-1-fill text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Liên kết nhanh</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Trang chủ</a></li>
+                        <li><a href="#products" class="text-gray-400 hover:text-white transition-colors">Sản phẩm</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition-colors">Giới thiệu</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition-colors">Liên hệ</a></li>
+                        <li><a href="https://yohu-pro.github.io/Yohu-ketoanpro/" target="_blank" class="text-gray-400 hover:text-white transition-colors">Yohu Kế Toán Pro</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Thông tin liên hệ</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-map-pin-line"></i>
+                            </div>
+                            <span class="text-gray-400">Nhân Dục, Hiến Nam, Hưng Yên, Việt Nam</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-phone-line"></i>
+                            </div>
+                            <span class="text-gray-400">0973 480 488</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-chat-1-line"></i>
+                            </div>
+                            <span class="text-gray-400">Zalo OA: 033960 6969</span>
+                        </li>
+                        <li class="flex items-start">
+                            <div class="w-5 h-5 flex items-center justify-center text-gray-400 mr-3 mt-1">
+                                <i class="ri-mail-line"></i>
+                            </div>
+                            <span class="text-gray-400">Yohu.vn@gmail.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 text-center">
+                <p class="text-gray-500">© 2025 Yohu Việt Nam. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script id="mobile-menu-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+        });
+    </script>
+
+    <script id="contact-form-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contact-form');
+            
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    // Get form values
+                    const name = document.getElementById('name').value;
+                    const email = document.getElementById('email').value;
+                    const phone = document.getElementById('phone').value;
+                    const message = document.getElementById('message').value;
+                    
+                    // Here you would typically send the form data to a server
+                    // For demonstration, we'll just show an alert
+                    alert(`Cảm ơn ${name} đã liên hệ với chúng tôi! Chúng tôi sẽ phản hồi qua email ${email} hoặc số điện thoại ${phone} trong thời gian sớm nhất.`);
+                    
+                    // Reset form
+                    contactForm.reset();
+                });
+            }
+        });
+    </script>
+
+    <script id="product-filter-script">
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('#products .flex.flex-wrap.justify-center button');
+            
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('bg-primary', 'text-white');
+                        btn.classList.add('bg-white', 'text-gray-700', 'hover:bg-gray-200');
+                    });
+                    
+                    // Add active class to clicked button
+                    this.classList.remove('bg-white', 'text-gray-700', 'hover:bg-gray-200');
+                    this.classList.add('bg-primary', 'text-white');
+                    
+                    // Here you would typically filter the products
+                    // For demonstration, we'll just show an alert
+                    const filterType = this.textContent.trim();
+                    if (filterType !== 'Tất cả sản phẩm') {
+                        alert(`Đang lọc sản phẩm theo: ${filterType}`);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
